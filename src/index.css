@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,19 +37,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -88,6 +83,14 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  html, body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f2f6f2;
+    min-height: 100vh;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 }
 
 @layer base {
@@ -97,5 +100,47 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .autoflow-container {
+    @apply w-full max-w-md mx-auto min-h-screen px-4 pt-6 pb-20;
+  }
+  
+  .autoflow-card {
+    @apply bg-white rounded-xl p-5 shadow-sm;
+  }
+  
+  .autoflow-btn-primary {
+    @apply bg-autoflow-green text-white font-medium py-3 px-6 rounded-lg hover:bg-autoflow-dark-green transition-colors w-full flex items-center justify-center;
+  }
+  
+  .autoflow-btn-secondary {
+    @apply bg-white border border-autoflow-green text-autoflow-green font-medium py-3 px-6 rounded-lg hover:bg-autoflow-light-bg transition-colors w-full flex items-center justify-center;
+  }
+  
+  .autoflow-input {
+    @apply bg-white border border-gray-200 rounded-lg py-3 px-4 w-full focus:outline-none focus:ring-2 focus:ring-autoflow-green focus:border-transparent;
+  }
+  
+  .autoflow-radio-card {
+    @apply border-2 rounded-xl p-4 cursor-pointer transition-all;
+  }
+  
+  .autoflow-radio-card.selected {
+    @apply border-autoflow-green bg-autoflow-light-bg;
+  }
+  
+  .autoflow-service-card {
+    @apply flex flex-col items-center justify-center p-4 border border-gray-100 rounded-xl bg-white hover:shadow-md transition-shadow cursor-pointer;
+  }
+  
+  .autoflow-heading {
+    @apply text-2xl font-bold text-autoflow-dark-green;
+  }
+  
+  .autoflow-subheading {
+    @apply text-lg font-medium text-autoflow-green mb-4;
   }
 }
